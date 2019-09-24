@@ -36,9 +36,6 @@ input {
   display: block;
   &#color1 {
     background-color: darken($color1, 15%);
-    &:hover {
-      animation: blink1 1.1s step-end infinite;
-    }
     &:checked {
       background-color: $color1;
       box-shadow: 0 0 6em lighten($color1, 10%);
@@ -46,9 +43,6 @@ input {
   }
   &#color2 {
     background-color: darken($color2, 15%);
-    &:hover {
-      animation: blink2 1s step-end infinite;
-    }
     &:checked {
       background-color: $color2;
       box-shadow: 0 0 6em lighten($color2, 10%);
@@ -56,9 +50,6 @@ input {
   }
   &#color3 {
     background-color: darken($color3, 15%);
-    &:hover {
-      animation: blink3 1s step-end infinite;
-    }
     &:checked {
       background-color: $color3;
       box-shadow: 0 0 6em lighten($color3, 10%);
