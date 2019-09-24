@@ -6,7 +6,7 @@ import VueSocketIO from 'vue-socket.io';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
-const baseURL = 'http://iotmidtermapi.chutipon.dev';
+const baseURL = 'https://iot-midterm-backend.herokuapp.com';
 
 Vue.config.productionTip = false;
 
