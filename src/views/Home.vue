@@ -1,31 +1,14 @@
 <template>
-  <div class="traffic-light-row">
-    <div class="traffic-light-column">
-      <h1>Light 1</h1>
-      <TrafficLight :index="0"></TrafficLight>
-    </div>
-    <div class="traffic-light-column">
-      <h1>Light 2</h1>
-      <TrafficLight :index="1"></TrafficLight>
-    </div>
-    <div class="traffic-light-column">
-      <h1>Light 3</h1>
-      <TrafficLight :index="2"></TrafficLight>
-    </div>
-    <div class="traffic-light-column">
-      <h1>Light 4</h1>
-      <TrafficLight :index="3"></TrafficLight>
-    </div>
+  <div class="container">
+    <TrafficLightControl :index="0"></TrafficLightControl>
+    <TrafficLightControl :index="1"></TrafficLightControl>
+    <TrafficLightControl :index="2"></TrafficLightControl>
+    <TrafficLightControl :index="3"></TrafficLightControl>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
-.traffic-light-column {
-  display: flex;
-  flex-direction: column;
-}
-.traffic-light-row {
+.container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -37,11 +20,11 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue";
-import TrafficLight from "@/components/TrafficLight.vue";
+import TrafficLightControl from "@/components/TrafficLightControl.vue";
 
 @Component({
   components: {
-    TrafficLight
+    TrafficLightControl
   }
 })
 export default class Home extends Vue {}

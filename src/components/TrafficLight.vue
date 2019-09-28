@@ -95,19 +95,19 @@ input {
 </style>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
-import { TrafficLightColor } from "../store";
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import { mapGetters } from 'vuex';
+import { TrafficLightColor } from '@/store';
+
 @Component({
   computed: {
     ...mapGetters({
-      trafficLights: "trafficLights"
+      trafficLights: 'trafficLights'
     })
   }
 })
 export default class TrafficLight extends Vue {
-  @Prop()
-  private index!: number;
+  @Prop() private index!: number;
   private trafficLights!: TrafficLightColor[];
 
   private get currentLight(): TrafficLightColor {
