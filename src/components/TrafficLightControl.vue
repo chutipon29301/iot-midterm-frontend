@@ -3,6 +3,7 @@
     <h1>Light {{index + 1}}</h1>
     <TrafficLight :index="index"></TrafficLight>
     <button class="pure-material-button-contained" @click="onNextColorBtnClick">Next</button>
+    <button class="pure-material-button-contained" @click="onSetGreenBtnClick">Set green light</button>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 .traffic-light-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .pure-material-button-contained {
   margin-top: 5vh;
@@ -124,6 +126,10 @@ export default class TrafficLigntControl extends Vue {
 
   private onNextColorBtnClick() {
     this.axios.post(`traffic-light/next-color/${this.index}`);
+  }
+
+  private onSetGreenBtnClick() {
+    this.axios.post(`traffic-light/set-green/${this.index}`);
   }
 }
 </script>
