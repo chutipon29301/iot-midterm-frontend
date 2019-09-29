@@ -77,42 +77,6 @@ input {
     }
   }
 }
-
-@keyframes blink1 {
-  0% {
-    background-color: $color1;
-    box-shadow: 0 0 6em lighten($color1, 10%);
-  }
-
-  50% {
-    background-color: darken($color1, 15%);
-    box-shadow: 0 0 0em transparent;
-  }
-}
-
-@keyframes blink2 {
-  0% {
-    background-color: $color2;
-    box-shadow: 0 0 6em lighten($color2, 10%);
-  }
-
-  50% {
-    background-color: darken($color2, 15%);
-    box-shadow: 0 0 0em transparent;
-  }
-}
-
-@keyframes blink3 {
-  0% {
-    background-color: $color3;
-    box-shadow: 0 0 6em lighten($color3, 10%);
-  }
-
-  50% {
-    background-color: darken($color3, 15%);
-    box-shadow: 0 0 0em transparent;
-  }
-}
 </style>
 
 <script lang="ts">
