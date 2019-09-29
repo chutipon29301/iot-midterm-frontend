@@ -41,7 +41,14 @@
 
     <section id="content2" class="tab-content"></section>
 
-    <section id="content3" class="tab-content"></section>
+    <section id="content3" class="tab-content">
+      <div class="container">
+        <TrafficLightSensor :index="0"></TrafficLightSensor>
+        <TrafficLightSensor :index="1"></TrafficLightSensor>
+        <TrafficLightSensor :index="2"></TrafficLightSensor>
+        <TrafficLightSensor :index="3"></TrafficLightSensor>
+      </div>
+    </section>
 
     <section id="content4" class="tab-content">
       <div class="container">
@@ -56,12 +63,14 @@
       <h1>
         Chutipon Hirankanokkul
         <i>5931239021</i>
-        ICE 4<sup>th</sup>
+        ICE 4
+        <sup>th</sup>
       </h1>
       <h1>
         Worradorn Putraserani
         <i>5931338521</i>
-        ADME 4<sup>th</sup>
+        ADME 4
+        <sup>th</sup>
       </h1>
     </section>
   </div>
@@ -193,12 +202,14 @@ label .fa {
 import { Component, Vue } from "vue-property-decorator";
 import TrafficLightControl from "@/components/TrafficLightControl.vue";
 import TrafficLightManual from "@/components/TrafficLightManual.vue";
+import TrafficLightSensor from "@/components/TrafficLightSensor.vue";
 import { TrafficLightSystemMode } from "@/store";
 
 @Component({
   components: {
     TrafficLightControl,
-    TrafficLightManual
+    TrafficLightManual,
+    TrafficLightSensor
   }
 })
 export default class Home extends Vue {
