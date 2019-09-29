@@ -9,11 +9,18 @@ export enum TrafficLightColor {
   YELLOW = 'YELLOW',
 }
 
+export enum TrafficLightSystemMode {
+  AUTO = 'AUTO',
+  MANUAL = 'MANUAL',
+  SENSOR = 'SENSOR',
+}
+
 export default new Vuex.Store({
   state: {
     trafficLights: [] as TrafficLightColor[],
     irSensorsState: [] as boolean[],
     trafficLightCounter: [] as number[],
+    mode: TrafficLightSystemMode.MANUAL,
   },
   getters: {
     trafficLights: (state) => state.trafficLights,
@@ -30,6 +37,9 @@ export default new Vuex.Store({
     updateTrafficLightCounter(state, payload: number[]) {
       state.trafficLightCounter = payload;
     },
+    updateTrafficLightSystemMode(state, payload: TrafficLightSystemMode) {
+      state.mode = payload;
+    },
   },
   actions: {
     SOCKET_onTrafficLightChange({ commit }, message: TrafficLightColor[]) {
@@ -40,6 +50,9 @@ export default new Vuex.Store({
     },
     SOCKET_onCounterChange({ commit }, message: number[]) {
       commit('updateTrafficLightCounter', message);
+    },
+    SOCKET_onModeChange({ commit }, message: TrafficLightSystemMode) {
+      commit('updateTrafficLightSystemMode', message);
     },
   },
 });

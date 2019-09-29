@@ -1,7 +1,7 @@
 <template>
   <div class="traffic-light-container">
-    <h1>Light {{index + 1}}</h1>
-    <h2>Countdown: {{counterString}}</h2>
+    <h2>Light {{index + 1}}</h2>
+    <p>Countdown: {{counterString}}</p>
     <TrafficLight :index="index"></TrafficLight>
     <button class="pure-material-button-contained" @click="onNextColorBtnClick">Next</button>
     <button class="pure-material-button-contained" @click="onSetGreenBtnClick">Set green light</button>
@@ -15,7 +15,7 @@
   align-items: center;
 }
 .pure-material-button-contained {
-  margin-top: 5vh;
+  margin-top: 3vh;
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -23,7 +23,7 @@
   border-radius: 4px;
   padding: 0 16px;
   min-width: 64px;
-  height: 5em;
+  height: 3em;
   vertical-align: middle;
   text-align: center;
   text-overflow: ellipsis;

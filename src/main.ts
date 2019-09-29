@@ -12,7 +12,7 @@ const baseURL = 'http://localhost:3000';
 Vue.config.productionTip = false;
 
 Vue.use(new VueSocketIO({
-  debug: true,
+  debug: false,
   connection: baseURL,
   vuex: {
     store,
