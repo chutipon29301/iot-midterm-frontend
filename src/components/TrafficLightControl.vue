@@ -1,6 +1,7 @@
 <template>
   <div class="traffic-light-container">
     <h1>Light {{index + 1}}</h1>
+    <h2>Countdown: {{counterString}}</h2>
     <TrafficLight :index="index"></TrafficLight>
     <button class="pure-material-button-contained" @click="onNextColorBtnClick">Next</button>
     <button class="pure-material-button-contained" @click="onSetGreenBtnClick">Set green light</button>
@@ -115,14 +116,29 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import TrafficLight from "./TrafficLight.vue";
+import { mapGetters } from "vuex";
 
 @Component({
   components: {
     TrafficLight
+  },
+  computed: {
+    ...mapGetters({
+      trafficLightCounter: "trafficLightCounter"
+    })
   }
 })
 export default class TrafficLigntControl extends Vue {
   @Prop() private index!: number;
+  private trafficLightCounter!: number[];
+
+  private get counterString(): string {
+    if (this.trafficLightCounter[this.index] === -1) {
+      return "-";
+    } else {
+      return `${this.trafficLightCounter[this.index]}`;
+    }
+  }
 
   private onNextColorBtnClick() {
     this.axios.post(`traffic-light/next-color/${this.index}`);

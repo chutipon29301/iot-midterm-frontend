@@ -13,10 +13,12 @@ export default new Vuex.Store({
   state: {
     trafficLights: [] as TrafficLightColor[],
     irSensorsState: [] as boolean[],
+    trafficLightCounter: [] as number[],
   },
   getters: {
     trafficLights: (state) => state.trafficLights,
     irSensorState: (state) => state.irSensorsState,
+    trafficLightCounter: (state) => state.trafficLightCounter,
   },
   mutations: {
     updateTrafficLight(state, payload: TrafficLightColor[]) {
@@ -24,7 +26,10 @@ export default new Vuex.Store({
     },
     updateIRSensorState(state, payload: boolean[]) {
       state.irSensorsState = payload;
-    }
+    },
+    updateTrafficLightCounter(state, payload: number[]) {
+      state.trafficLightCounter = payload;
+    },
   },
   actions: {
     SOCKET_onTrafficLightChange({ commit }, message: TrafficLightColor[]) {
@@ -32,6 +37,9 @@ export default new Vuex.Store({
     },
     SOCKET_onIRSensorChange({ commit }, message: boolean[]) {
       commit('updateIRSensorState', message);
+    },
+    SOCKET_onCounterChange({ commit }, message: number[]) {
+      commit('updateTrafficLightCounter', message);
     },
   },
 });
