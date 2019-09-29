@@ -39,7 +39,14 @@
       </div>
     </section>
 
-    <section id="content2" class="tab-content"></section>
+    <section id="content2" class="tab-content">
+      <div class="container">
+        <TrafficLightAuto :index="0"></TrafficLightAuto>
+        <TrafficLightAuto :index="1"></TrafficLightAuto>
+        <TrafficLightAuto :index="2"></TrafficLightAuto>
+        <TrafficLightAuto :index="3"></TrafficLightAuto>
+      </div>
+    </section>
 
     <section id="content3" class="tab-content">
       <div class="row-container">
@@ -213,6 +220,7 @@ import { Component, Vue } from "vue-property-decorator";
 import TrafficLightControl from "@/components/TrafficLightControl.vue";
 import TrafficLightManual from "@/components/TrafficLightManual.vue";
 import TrafficLightSensor from "@/components/TrafficLightSensor.vue";
+import TrafficLightAuto from "@/components/TrafficLightAuto.vue";
 import Sensor from "@/components/Sensor.vue";
 import { TrafficLightSystemMode } from "@/store";
 
@@ -221,6 +229,7 @@ import { TrafficLightSystemMode } from "@/store";
     TrafficLightControl,
     TrafficLightManual,
     TrafficLightSensor,
+    TrafficLightAuto,
     Sensor
   }
 })
