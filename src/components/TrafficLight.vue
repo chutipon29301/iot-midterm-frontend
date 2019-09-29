@@ -1,8 +1,29 @@
 <template>
   <div id="traffic-light">
-    <input type="radio" :name="`traffic-light-color-${index}`" id="color1" value="RED" v-model="currentLight"/>
-    <input type="radio" :name="`traffic-light-color-${index}`" id="color2" value="YELLOW" v-model="currentLight"/>
-    <input type="radio" :name="`traffic-light-color-${index}`" id="color3" value="GREEN" v-model="currentLight"/>
+    <input
+      type="radio"
+      :name="`traffic-light-color-${index}-${$parent.$vnode.tag}`"
+      id="color1"
+      value="RED"
+      v-model="currentLight"
+      :disabled="!allowChangeLight"
+    />
+    <input
+      type="radio"
+      :name="`traffic-light-color-${index}-${$parent.$vnode.tag}`"
+      id="color2"
+      value="YELLOW"
+      v-model="currentLight"
+      :disabled="!allowChangeLight"
+    />
+    <input
+      type="radio"
+      :name="`traffic-light-color-${index}-${$parent.$vnode.tag}`"
+      id="color3"
+      value="GREEN"
+      v-model="currentLight"
+      :disabled="!allowChangeLight"
+    />
   </div>
 </template>
 
@@ -95,19 +116,20 @@ input {
 </style>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
-import { mapGetters } from 'vuex';
-import { TrafficLightColor } from '@/store';
+import { Component, Vue, Prop } from "vue-property-decorator";
+import { mapGetters } from "vuex";
+import { TrafficLightColor } from "@/store";
 
 @Component({
   computed: {
     ...mapGetters({
-      trafficLights: 'trafficLights'
+      trafficLights: "trafficLights"
     })
   }
 })
 export default class TrafficLight extends Vue {
   @Prop() private index!: number;
+  @Prop({ required: false, default: false }) private allowChangeLight!: boolean;
   private trafficLights!: TrafficLightColor[];
 
   private get currentLight(): TrafficLightColor {
@@ -115,7 +137,9 @@ export default class TrafficLight extends Vue {
   }
 
   private set currentLight(newValue: TrafficLightColor) {
-    this.axios.post(`traffic-light/change-light/${this.index}`,{color: newValue});
+    this.axios.post(`traffic-light/change-light/${this.index}`, {
+      color: newValue
+    });
   }
 }
 </script>

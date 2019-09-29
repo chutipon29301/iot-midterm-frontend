@@ -30,7 +30,14 @@
       <span>Group Members</span>
     </label>
 
-    <section id="content1" class="tab-content"></section>
+    <section id="content1" class="tab-content">
+      <div class="container">
+        <TrafficLightManual :index="0"></TrafficLightManual>
+        <TrafficLightManual :index="1"></TrafficLightManual>
+        <TrafficLightManual :index="2"></TrafficLightManual>
+        <TrafficLightManual :index="3"></TrafficLightManual>
+      </div>
+    </section>
 
     <section id="content2" class="tab-content"></section>
 
@@ -49,10 +56,12 @@
       <h1>
         Chutipon Hirankanokkul
         <i>5931239021</i>
+        ICE 4<sup>th</sup>
       </h1>
       <h1>
-        Chutipon Hirankanokkul
-        <i>5931239021</i>
+        Worradorn Putraserani
+        <i>5931338521</i>
+        ADME 4<sup>th</sup>
       </h1>
     </section>
   </div>
@@ -182,13 +191,14 @@ label .fa {
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue";
 import TrafficLightControl from "@/components/TrafficLightControl.vue";
-import { TrafficLightSystemMode } from "../store";
+import TrafficLightManual from "@/components/TrafficLightManual.vue";
+import { TrafficLightSystemMode } from "@/store";
 
 @Component({
   components: {
-    TrafficLightControl
+    TrafficLightControl,
+    TrafficLightManual
   }
 })
 export default class Home extends Vue {

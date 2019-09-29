@@ -2,8 +2,7 @@
   <div class="traffic-light-container">
     <h2>Light {{index + 1}}</h2>
     <p>Countdown: {{counterString}}</p>
-    <TrafficLight :index="index" :allowChangeLight="true"></TrafficLight>
-    <MaterialButton :click="onNextColorBtnClick">Next</MaterialButton>
+    <TrafficLight :index="index"></TrafficLight>
     <MaterialButton :click="onSetGreenBtnClick">Set green light</MaterialButton>
   </div>
 </template>
@@ -33,7 +32,7 @@ import { mapGetters } from "vuex";
     })
   }
 })
-export default class TrafficLigntControl extends Vue {
+export default class TrafficLightManual extends Vue {
   @Prop() private index!: number;
   private trafficLightCounter!: number[];
 
@@ -43,10 +42,6 @@ export default class TrafficLigntControl extends Vue {
     } else {
       return `${this.trafficLightCounter[this.index]}`;
     }
-  }
-
-  private onNextColorBtnClick() {
-    this.axios.post(`traffic-light/next-color/${this.index}`);
   }
 
   private onSetGreenBtnClick() {
