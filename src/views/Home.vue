@@ -32,43 +32,49 @@
 
     <section id="content1" class="tab-content">
       <div class="container">
-        <TrafficLightManual :index="0"></TrafficLightManual>
-        <TrafficLightManual :index="1"></TrafficLightManual>
-        <TrafficLightManual :index="2"></TrafficLightManual>
-        <TrafficLightManual :index="3"></TrafficLightManual>
+        <TrafficLightManual :index="0" />
+        <TrafficLightManual :index="1" />
+        <TrafficLightManual :index="2" />
+        <TrafficLightManual :index="3" />
       </div>
     </section>
 
     <section id="content2" class="tab-content">
       <div class="container">
-        <TrafficLightAuto :index="0"></TrafficLightAuto>
-        <TrafficLightAuto :index="1"></TrafficLightAuto>
-        <TrafficLightAuto :index="2"></TrafficLightAuto>
-        <TrafficLightAuto :index="3"></TrafficLightAuto>
+        <TrafficLightAuto :index="0" />
+        <TrafficLightAuto :index="1" />
+        <TrafficLightAuto :index="2" />
+        <TrafficLightAuto :index="3" />
       </div>
     </section>
 
     <section id="content3" class="tab-content">
       <div class="row-container">
         <div class="container">
-          <Sensor :index="0"></Sensor>
-          <Sensor :index="1"></Sensor>
+          <Sensor :index="0" />
+          <Sensor :index="1" />
         </div>
         <div class="container">
-          <TrafficLightSensor :index="0"></TrafficLightSensor>
-          <TrafficLightSensor :index="1"></TrafficLightSensor>
-          <TrafficLightSensor :index="2"></TrafficLightSensor>
-          <TrafficLightSensor :index="3"></TrafficLightSensor>
+          <TrafficLightSensor :index="0" />
+          <TrafficLightSensor :index="1" />
+          <TrafficLightSensor :index="2" />
+          <TrafficLightSensor :index="3" />
         </div>
       </div>
     </section>
 
     <section id="content4" class="tab-content">
-      <div class="container">
-        <TrafficLightControl :index="0"></TrafficLightControl>
-        <TrafficLightControl :index="1"></TrafficLightControl>
-        <TrafficLightControl :index="2"></TrafficLightControl>
-        <TrafficLightControl :index="3"></TrafficLightControl>
+      <div class="row-container">
+        <div class="container">
+          <Sensor :index="0" :allowManualOverride="true" />
+          <Sensor :index="1" :allowManualOverride="true" />
+        </div>
+        <div class="container">
+          <TrafficLightControl :index="0" />
+          <TrafficLightControl :index="1" />
+          <TrafficLightControl :index="2" />
+          <TrafficLightControl :index="3" />
+        </div>
       </div>
     </section>
 
