@@ -24,7 +24,7 @@ export default new Vuex.Store({
   },
   getters: {
     trafficLights: (state) => state.trafficLights,
-    irSensorState: (state) => state.irSensorsState,
+    irSensorsState: (state) => state.irSensorsState,
     trafficLightCounter: (state) => state.trafficLightCounter,
   },
   mutations: {

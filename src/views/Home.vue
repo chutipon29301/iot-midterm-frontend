@@ -42,11 +42,17 @@
     <section id="content2" class="tab-content"></section>
 
     <section id="content3" class="tab-content">
-      <div class="container">
-        <TrafficLightSensor :index="0"></TrafficLightSensor>
-        <TrafficLightSensor :index="1"></TrafficLightSensor>
-        <TrafficLightSensor :index="2"></TrafficLightSensor>
-        <TrafficLightSensor :index="3"></TrafficLightSensor>
+      <div class="row-container">
+        <div class="container">
+          <Sensor :index="0"></Sensor>
+          <Sensor :index="1"></Sensor>
+        </div>
+        <div class="container">
+          <TrafficLightSensor :index="0"></TrafficLightSensor>
+          <TrafficLightSensor :index="1"></TrafficLightSensor>
+          <TrafficLightSensor :index="2"></TrafficLightSensor>
+          <TrafficLightSensor :index="3"></TrafficLightSensor>
+        </div>
       </div>
     </section>
 
@@ -79,6 +85,10 @@
 <style lang="scss" scoped>
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
+.row-container {
+  display: flex;
+  flex-direction: column;
+}
 .container {
   display: flex;
   flex-direction: row;
@@ -203,13 +213,15 @@ import { Component, Vue } from "vue-property-decorator";
 import TrafficLightControl from "@/components/TrafficLightControl.vue";
 import TrafficLightManual from "@/components/TrafficLightManual.vue";
 import TrafficLightSensor from "@/components/TrafficLightSensor.vue";
+import Sensor from "@/components/Sensor.vue";
 import { TrafficLightSystemMode } from "@/store";
 
 @Component({
   components: {
     TrafficLightControl,
     TrafficLightManual,
-    TrafficLightSensor
+    TrafficLightSensor,
+    Sensor
   }
 })
 export default class Home extends Vue {
