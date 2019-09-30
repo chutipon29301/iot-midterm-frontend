@@ -3,14 +3,14 @@
     <h2>Light {{index + 1}}</h2>
     <p>Countdown: {{counterString}}</p>
     <TrafficLight :index="index"></TrafficLight>
-    <div class="input-container">
+    <!-- <div class="input-container">
       <div class="group">
         <input type="text" required />
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Countdown</label>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
