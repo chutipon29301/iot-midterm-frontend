@@ -31,12 +31,7 @@
     </label>
 
     <section id="content1" class="tab-content">
-      <div class="container">
-        <TrafficLightManual :index="0" />
-        <TrafficLightManual :index="1" />
-        <TrafficLightManual :index="2" />
-        <TrafficLightManual :index="3" />
-      </div>
+      <MannualModeControllerSet/>
     </section>
 
     <section id="content2" class="tab-content">
@@ -224,18 +219,18 @@ label .fa {
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import TrafficLightControl from "@/components/TrafficLightControl.vue";
-import TrafficLightManual from "@/components/TrafficLightManual.vue";
 import TrafficLightSensor from "@/components/TrafficLightSensor.vue";
 import TrafficLightAuto from "@/components/TrafficLightAuto.vue";
+import MannualModeControllerSet from "@/components/ManualModeControlSet.vue";
 import Sensor from "@/components/Sensor.vue";
 import { TrafficLightSystemMode } from "@/store";
 
 @Component({
   components: {
     TrafficLightControl,
-    TrafficLightManual,
     TrafficLightSensor,
     TrafficLightAuto,
+    MannualModeControllerSet,
     Sensor
   }
 })
