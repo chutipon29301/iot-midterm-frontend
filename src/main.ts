@@ -6,8 +6,8 @@ import VueSocketIO from 'vue-socket.io';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
-// const baseURL = 'https://iot-midterm-backend.herokuapp.com';
-const baseURL = 'http://localhost:3000';
+const baseURL = 'https://iot-midterm-backend.herokuapp.com';
+// const baseURL = 'http://localhost:3000';
 
 Vue.config.productionTip = false;
 
