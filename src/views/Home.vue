@@ -43,18 +43,7 @@
     </section>
 
     <section id="content4" class="tab-content">
-      <div class="row-container">
-        <div class="container">
-          <Sensor :index="0" :allowManualOverride="true" />
-          <Sensor :index="1" :allowManualOverride="true" />
-        </div>
-        <div class="container">
-          <TrafficLightControl :index="0" />
-          <TrafficLightControl :index="1" />
-          <TrafficLightControl :index="2" />
-          <TrafficLightControl :index="3" />
-        </div>
-      </div>
+      <DebugModeControlSet />
     </section>
 
     <section id="content5" class="tab-content">
@@ -76,18 +65,6 @@
 
 <style lang="scss" scoped>
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
-
-.row-container {
-  display: flex;
-  flex-direction: column;
-}
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  min-height: 100px;
-}
 
 *,
 *:after,
@@ -202,20 +179,18 @@ label .fa {
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import TrafficLightControl from "@/components/TrafficLightControl.vue";
-import TrafficLightSensor from "@/components/TrafficLightSensor.vue";
 import MannualModeControlSet from "@/components/ManualModeControlSet.vue";
 import AutoModeControlSet from "@/components/AutoModeControlSet.vue";
 import SensorModeControlSet from "@/components/SensorModeControlSet.vue";
+import DebugModeControlSet from "@/components/DebugModeControlSet.vue";
 import { TrafficLightSystemMode } from "@/store";
 
 @Component({
   components: {
-    TrafficLightControl,
-    TrafficLightSensor,
     MannualModeControlSet,
     AutoModeControlSet,
     SensorModeControlSet,
+    DebugModeControlSet
   }
 })
 export default class Home extends Vue {
