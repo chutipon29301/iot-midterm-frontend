@@ -69,7 +69,7 @@ export default class Sensor extends Vue {
 
   public toggle() {
     this.axios.post(`traffic-light/change-ir-state/${this.index}`, {
-      state: !this.irSensorsState[this.index]
+      state: +!this.irSensorsState[this.index]
     });
   }
 }
