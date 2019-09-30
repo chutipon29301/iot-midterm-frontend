@@ -39,18 +39,7 @@
     </section>
 
     <section id="content3" class="tab-content">
-      <div class="row-container">
-        <div class="container">
-          <Sensor :index="0" />
-          <Sensor :index="1" />
-        </div>
-        <div class="container">
-          <TrafficLightSensor :index="0" />
-          <TrafficLightSensor :index="1" />
-          <TrafficLightSensor :index="2" />
-          <TrafficLightSensor :index="3" />
-        </div>
-      </div>
+      <SensorModeControlSet />
     </section>
 
     <section id="content4" class="tab-content">
@@ -217,7 +206,7 @@ import TrafficLightControl from "@/components/TrafficLightControl.vue";
 import TrafficLightSensor from "@/components/TrafficLightSensor.vue";
 import MannualModeControlSet from "@/components/ManualModeControlSet.vue";
 import AutoModeControlSet from "@/components/AutoModeControlSet.vue";
-import Sensor from "@/components/Sensor.vue";
+import SensorModeControlSet from "@/components/SensorModeControlSet.vue";
 import { TrafficLightSystemMode } from "@/store";
 
 @Component({
@@ -226,7 +215,7 @@ import { TrafficLightSystemMode } from "@/store";
     TrafficLightSensor,
     MannualModeControlSet,
     AutoModeControlSet,
-    Sensor
+    SensorModeControlSet,
   }
 })
 export default class Home extends Vue {
